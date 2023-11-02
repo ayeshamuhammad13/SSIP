@@ -1,0 +1,945 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+:root
+{
+	--green: green;
+	--black : #130f40;
+	--light-color: #666;
+	--box-shadow: 0.4rem .4rem rgba(0,0,0.1);
+	--border: .1rem solid rgba(0,0,0.1);
+	--outline: .1rem solid rgba(0,0,0.1);
+}
+
+*
+{
+	font-family: 'Poppins' , sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	border: none;
+	text-decoration: none;
+	text-transform: capitalize;
+	transition: all .2s linear;
+}
+
+html
+{
+   font-size: 62.5% ;
+   overflow-x: hidden;
+   scroll-behavior: smooth;
+   scroll-padding-top: 7rem;  
+}
+
+body
+{
+   background-color: #eee;
+}
+
+/*/ css code for banner /*/
+section
+{
+  padding: 2rem 9%;
+}
+
+.heading
+{
+  padding: 2rem 0;
+  text-align: center;
+  padding-bottom: 3rem;
+  font-size: 3.4rem;
+  color: black;
+}
+
+.heading span
+{
+  background: green;
+  color: #fff;
+  display: inline-block;
+  padding: .5rem 2rem;
+  clip-path: polygon(100% 0, 91% 50%, 100% 90%, 0% 100%, 7% 50%, 0% 0%);
+}
+
+.btn
+{
+  border: .1rem solid black;
+  margin-top: 1rem;
+  display: inline-block;
+  padding: .7rem 2rem;
+  font-size: 1.7rem;
+  border-radius: .4rem;
+  color: black;
+  cursor: pointer;
+  background: none;
+  margin: 1rem;
+}
+
+.btn:hover
+{
+  background: green;
+  color: white;
+
+}
+
+.header
+{
+   border: 0px solid;	
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   z-index: 1000;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 2rem 9%;
+   background: #fff;
+   box-shadow: .1rem .1rem rgba(0,0,0.1);
+
+}
+
+.header .logo
+{
+  font-size: 2.5rem;
+  font-weight: bolder;
+}
+
+.header .logo i
+ {
+ 	color: var(--green);
+ }
+
+.header .navbar
+{
+  position: absolute;
+  top: 110%; right: -110%;
+  width: 30rem;
+  box-shadow: var(_box-shadow);
+  border-radius: .5rem ;
+  background: #fff;
+}
+
+
+.header .navbar.active
+{
+   right: 2rem;
+   transition: .4s linear;
+}
+
+ .header .navbar a
+ {
+ 	font-size: 1.7rem;
+ 	margin: 0.1rem;
+ 	color: var(--black);
+  cursor: pointer;
+ }
+
+ .header .navbar a:hover
+ {
+ 	color: green;
+ }
+
+.header .icon div
+{
+  border: 0px solid;
+  height: 4.4rem;
+  width: 4.4rem;
+  line-height: 4.4rem;
+  border-radius: .4rem;
+  background: #eee;
+  color: black;
+  font-size: 2rem;
+  margin-right: .3rem;
+  text-align: center; 
+  cursor: pointer;
+}
+
+.header .icon div:hover
+{
+  background: var(--green);
+  color: white;
+}
+
+#menu-btn
+{
+  display: none;
+}
+
+.dropdown .dropbtn {
+  font-size: 19px;
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: green;
+  color: white;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  font-size: 16px;
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+ .header .search-form 
+ {
+   border: 1px solid;
+   position: absolute;
+   top: 100%;
+   right: -110%;
+   width: 70;
+   height: 4.5rem;
+   background: #fff;
+   border-radius: 4rem;
+   overflow: hidden;
+   display: flex;
+   align-items: center;
+   box-shadow: var(--box-shadow);
+   margin-top: 1rem;
+
+ }
+
+ .header .search-form.active
+ {
+  right: 2rem;
+  transition: .4s linear;
+ }
+
+.header .search-form input
+{
+  height: 100%;
+  width: 100%;
+  background: none;
+  text-transform: none;
+  font-size: 1.7rem;
+  color: black;
+  padding: 1.4rem;
+}
+
+.header .search-form label
+{
+  font-size: 2.2rem;
+  padding-right: 1.5rem;
+  color: var(--black);
+  cursor: pointer;
+}
+
+.header .search-form label:hover
+{
+  color: #87cefa;
+}
+
+.header .shopping-cart 
+{
+   border: 1px solid;
+   position: absolute;
+   top: 110%;
+   right: -110%;
+   padding: 1rem;
+   border-radius: .5rem;
+   box-shadow: var(--box-shadow);
+   width: 32rem;
+   background: #fff;
+   cursor: pointer;
+}
+
+.header .shopping-cart.active 
+{
+  right: 2rem;
+  transition: .4s linear;
+}
+
+.header .shopping-cart .box
+{
+  border: 1px solid blue;
+  display: flex;
+  align-items: center;
+  gap: .1rem;
+  position: relative;
+  margin: 1rem 0rem;
+}
+.header .shopping-cart .box img
+{
+  height: 7rem;
+  width: 7rem;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-bottom: 1rem;  
+}
+
+.header .shopping-cart .box .fa-trash
+{
+  font-size: 2rem;
+  position: absolute;
+  top: 50%;
+  right: 2rem;
+  cursor: pointer;
+  color: grey;
+  transform: translate(-50%);
+}
+
+.header .shopping-cart .box .fa-trash:hover
+{
+   color: green; 
+}
+
+.header .shopping-cart .box .content h3
+{
+  color: black;
+  font-size: 1.7rem;
+  padding-bottom: 1rem;
+}
+
+.header .shopping-cart .box .content span
+{
+  color: var(--light-color);
+  font-size: 1.5rem;
+  padding-left: 1rem;
+}  
+
+.header .shopping-cart .box .content .quantity
+{
+  padding-left: 1rem;
+  
+}
+
+.header .shopping-cart .total
+{
+  font-size: 1.7rem;
+  padding: 1rem 0rem;
+  text-align: center;
+  color: black;
+}
+
+.header .login-form
+{
+  border: 1px solid;
+  position: absolute;
+  top: 110%;
+  width: 34rem;
+  right: -105%;
+  box-shadow: .2rem .2rem rgba(0,0,0.1);
+  padding: 2rem;
+  border-radius: .4rem;
+  background: #fff;
+  text-align: center;
+
+}
+
+.header .login-form.active
+{
+   right: 4rem;
+   transition: .4s linear;
+}
+
+.header .login-form h3
+{
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  color: black;
+}
+
+.header .login-form .box
+{
+  border: 1px solid;
+  width: 100%;
+  border-radius: .4rem;
+  margin: .7rem 0rem;
+  padding: 1rem;
+  font-size: 1.7rem;
+  color: black;
+  transform: none;
+}
+
+.header .login-form p
+{
+  font-size: 1.5rem;
+  padding: .4rem 0;
+  color: var(--light-color);
+}
+
+.header .login-form p a
+{
+  font-size: 1.4rem;
+  padding: .4rem 0;
+  color: green;
+  text-decoration: underline;
+ 
+}
+
+
+.home
+{
+  border: 0px solid;
+  display: flex;
+  justify-content: space-around;
+  background: url(./img/banner2.PNG) no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 20rem;
+  padding-bottom: 3rem;
+ 
+}
+
+.home .content
+{
+  border: 0px solid;
+  text-align: center;
+  width: 60rem;
+}
+
+.home .content h3
+{
+  
+  color: black;
+  font-size: 3rem;
+  
+}
+
+.home .content h3 span
+{
+  color: green;
+  font-size: 3rem;
+  
+  
+}
+
+.home .content p
+{
+  color: black;
+  font-size: 1.9rem;
+  padding: 1rem 0;
+  line-height: 1.8; 
+  
+}
+
+.home a
+{
+  color: black;
+  font-size: 2rem;
+  padding: center;
+}
+
+
+
+/* features*/
+.features .box-container
+{
+  border: 0px solid;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr) );
+  gap: 1.3rem; 
+}
+
+.features .box-container .box
+{
+  border: 0px solid black;
+  padding: 1rem 1rem;
+  background: #fff;
+  outline: var(--outline);
+  outline-offset: -1rem;
+  text-align: center;
+  box-shadow: var(--box-shadow);
+
+}
+
+.features .box-container .box:hover
+{
+  box-shadow: 1px 10px 4px solid var(--green);
+}
+
+.features .box-container .box img
+{
+  margin: 1rem 0;
+  height: 8rem;
+}
+
+.features .box-container .box h3
+{
+  text-align: center;
+  padding-top: 1rem;
+  font-size: 1.7rem;
+  line-height: 1.7rem;
+
+}
+
+.features .box-container .box p
+{
+  color: var(--light-color);
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+  padding: 1rem 0;
+}
+
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+
+/*products*/
+
+.products .box-container
+{
+  border: 0px solid black;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr) );
+  gap: 1rem; 
+
+}
+
+.products .box-container .box
+{
+  border: 0px solid grey;
+  padding: 3rem 2rem;
+  background: #fff;
+  border-radius: .4rem;
+  box-shadow: var(--box-shadow);
+  outline: var(--outline);
+  outline-offset: -1rem;
+  text-align: center; 
+  height: 230px;
+  width: 230px;
+  gap: 1rem;
+}
+
+.products .box-container .box:hover
+{
+ outline: var(--outline-hover);
+ outline-offset: 0rem;
+}
+
+.products img
+{
+  margin: 1rem 0;
+  height: 7rem;
+  width: 7rem;
+  margin-top: 1px;
+  margin-bottom: 0px;
+}
+
+.products h3
+{
+   font-size: 1.8rem;
+  color: black;
+  line-height: 1.5;
+}
+
+.products i
+{
+   font-size: 1.4rem;
+  color: orange;
+  line-height: 1.4;
+  padding: 1rem 0;
+}
+
+.products a
+{
+  font-size: 1.2rem;
+  color: black;
+  line-height: 1.4;
+  padding: 1rem 0;
+  margin-top: .1px;
+  width: 100px;
+  line-height: 10px;
+
+}
+
+/*products end*/
+
+
+/*categories*/
+.categories .box-container
+{
+  border: 0px solid black;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr) );
+  gap: 1.4rem; 
+
+}
+
+.categories .box-container .box
+{
+  border: 0px solid grey;
+  padding: 3rem 2rem;
+  background: #fff;
+  border-radius: .4rem;
+  box-shadow: var(--box-shadow);
+  outline: var(--outline);
+  outline-offset: -1rem;
+  text-align: center; 
+}
+
+.categories .box-container .box:hover
+{
+ outline: var(--outline-hover);
+ outline-offset: 0rem;
+}
+
+.categories .box-container .box img
+{
+  margin: 1rem 0;
+  height: 12rem;
+  width: 12rem;
+}
+
+.categories .box-container .box h3
+{
+   font-size: 1.8rem;
+  color: black;
+  line-height: 1.4;
+}
+
+.categories .box-container .box p
+{
+   font-size: 1.4rem;
+  color: grey;
+  line-height: 1.4;
+  padding: 1rem 0;
+}
+
+
+/*review*/
+.review .review-slider
+{ 
+  padding: 1rem;
+}
+
+.review .review-slider:first-child
+{
+  margin-bottom: 1rem; 
+  
+}
+
+.review .review-slider .box
+{
+  border: 0px solid grey;
+  background: #fff;
+  border-radius: .4rem;
+  text-align: center;
+  padding: 2rem 0;
+  outline-offset: -1rem;
+  outline: var(--outline);
+  box-shadow: var(--box-shadow);
+  transition: .2s linear;  
+  margin-bottom: 80px;
+
+}
+
+.review .-slider .box:hover
+{
+   box-shadow: 1px 10px 4px solid green;
+   outline-offset: 0rem;
+}
+
+.review .review-slider .box img
+{
+  height: 8rem;
+  width: 7rem;
+}
+.avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 20px;
+  border-radius: 40%;
+}
+
+.column {
+  float: left;
+  width: 32.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table-row;
+}
+.review .review-slider .box p
+{
+  font-size: 1.4rem;
+  color: grey;
+}
+
+.review .review-slider .box h1
+{
+  font-size: 2.4rem;
+  color: black;
+}
+
+
+.review .review-slider .box .stars i
+{
+  text-align: center;
+  padding-top: .9rem;
+  font-size: 1.7rem;
+  line-height: 1.7rem;
+  color: orange;
+
+}
+
+.footer
+{
+  margin-top: 2px;
+  margin-bottom: 2px;
+  width: 100%;
+  height: 60%;
+  padding: 10px 5%;
+  background-color: #333;
+  color: #efefef;
+  display: flex;
+}
+
+.footer div
+{
+  text-align: center;
+}
+
+.col2
+{
+  flex-grow: 2;
+}
+.footer div h3
+{
+  font-weight: 380;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  letter-spacing: .1px; 
+  font-size: 25px;
+}
+
+.col1 a 
+{
+  font-size: 16px;
+  display: block;
+  text-decoration: none;
+  color: #efefef;
+  margin-bottom: 20px;
+
+}
+
+form input
+{
+ width: 380px;
+ height: 44px;
+ border-radius: 4px;
+ text-align: center;
+ margin-top: 15px;
+ margin-bottom: 30px;
+ outline: none;
+ border: none;
+}
+
+form button
+{
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 30px;
+  padding: 10px 30px;
+  font-size: 14px;
+  cursor: pointer;
+
+}
+.col3
+{
+  font-size: 16px;
+}
+
+.social-icons
+{
+  margin-top: 20px;
+}
+
+.social-icons i
+{
+ font-size: 20px;
+ margin: 7px;
+ justify-items: center;
+ cursor: pointer;
+
+}
+
+
+/* media qureies */
+@media(max-width: 991px)
+{
+  html
+  {
+    font-size: 55%;
+  }
+  .header
+  {
+    padding: 2rem;
+  }
+  section 
+  {
+    padding: 2rem;
+  }
+}
+
+
+/* media queries */
+@media(max-width: 768px)
+{
+    #menu-btn
+    {
+      display: inline-block;
+    }
+
+    .header .search-form
+    {
+      width: 90%;
+    }
+   .header .navbar
+   {
+    position: absolute;
+    top: 110%;
+    right: -110%;
+    width: 30rem;
+    border-radius: .4rem;
+    background: #fff;
+
+   }
+
+   .header .navbar a
+   {
+    font-size: 2rem;
+    margin: 2rem 2.4rem;
+    display: block;
+
+   }
+}
+
+/* media queries */
+@media(max-width: 450px)
+{
+  html
+   {
+   font-size:50% ;
+   }
+
+   .heading
+   {
+    font-size: 2.4rem;
+   }
+}
