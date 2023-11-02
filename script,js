@@ -1,0 +1,112 @@
+let searchForm = document.querySelector('.search-Form');
+
+document.querySelector('#search-btn').onclick = () =>
+{
+	searchForm.classList.toggle('active');
+	shoppingCart.classList.remove('active');
+    loginForm.classList.remove('active');
+	navbar.classList.remove('active');
+} 
+
+let shoppingCart = document.querySelector('.shopping-cart');
+
+document.querySelector('#cart-btn').onclick = () =>
+{
+	shoppingCart.classList.toggle('.active');
+	searchForm.classList.remove('active');
+    loginForm.classList.remove('active');
+	navbar.classList.remove('active');
+}
+
+ function shoppingCart() {
+  var shoppingCart = document.getElementById("shopping-cart");
+ shoppingCart.style.display = shoppingCart.style.display === "none" ? "block" : "none";
+}
+
+let loginForm = document.querySelector('.login-Form');
+
+document.querySelector('#login-btn').onclick = () =>
+{
+	loginForm.classList.toggle('.active');
+	searchForm.classList.remove('active');
+    shoppingCart.classList.remove('active');
+	navbar.classList.remove('active');
+}
+
+
+
+let navbar = document.querySelector('.navbar');
+
+document.querySelector('#menu-btn').onclick = () =>
+{
+	  navbar.classList.toggle('.active');
+	  searchForm.classList.remove('active');
+    shoppingCart.classList.remove('active');
+    loginForm.classList.remove('active');
+}
+
+window.onscroll = () =>
+{
+    searchForm.classList.remove('active');
+    shoppingCart.classList.remove('active');
+    loginForm.classList.remove('active');
+	navbar.classList.remove('active');
+
+}
+
+ var swiper = new Swiper(".product-slider", {
+        loop:true,
+        spaceBetween: 20,
+        autoplay:{
+          delay:7500,
+          disableOnInteraction: false,
+        },
+       centeredSlides: true,
+        breakpoints: {
+          0: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          1020: {
+            slidesPerView: 3,
+          },
+        },
+      });
+ 
+
+
+      const images = document.querySelectorAll('.product-slider img');
+     let index = 0;
+
+      setInterval(() => {
+        images[index].classList.remove('active');
+        index = (index + 1) % images.length;
+        images[index].classList.add('active');
+      }, 5000);
+
+
+ var swiper = new Swiper(".review-slider", {
+        loop:true,
+        spaceBetween: 20,
+        autoplay:{
+          delay:7400,
+          disableOnInteraction: false,
+        },
+       centeredSlides: true,
+        breakpoints: {
+          0: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          1020: {
+            slidesPerView: 3,
+          },
+        },
+      });
+   
+
+
